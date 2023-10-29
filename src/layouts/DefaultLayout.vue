@@ -7,13 +7,6 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
-const menuClasses = computed(() => ({
-  hidden: !isMenuOpen.value,
-  "md:flex": true,
-  "space-x-10": true,
-  "text-white": true,
-}));
-
 const activityImageClasses = computed(() => ({
   "w-full": true,
   "h-52 md:h-96": true,
@@ -38,11 +31,67 @@ const activityImageClasses = computed(() => ({
         <div class="absolute justify-end cursor-pointer md:hidden right-4">
           <button @click="toggleMenu" class="text-white">☰</button>
         </div>
-        <div :class="menuClasses">
+        <div
+          class="hidden space-x-10 text-white sm:hidden md:flex"
+          v-if="isMenuOpen === false"
+        >
           <div class="cursor-pointer font-bold text-[#F8BE1A]">BERANDA</div>
           <div class="cursor-pointer font-bold text-[#F8BE1A]">
             TENTANG KAMI
           </div>
+        </div>
+        <div class="relative z-50 navbar-menu" v-else-if="isMenuOpen === true">
+          <div
+            class="fixed inset-0 bg-gray-800 opacity-25 navbar-backdrop"
+          ></div>
+          <nav
+            class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto bg-black border-r"
+          >
+            <div class="flex items-center mb-8">
+              <a class="mr-auto text-3xl font-bold leading-none" href="#">
+                <img
+                  alt="logo-kaleka"
+                  src="../assets/images/img-logo.png"
+                  href="#"
+                  class="w-auto h-12 cursor-pointer md:h-16"
+                />
+              </a>
+              <button class="navbar-close" @click="isMenuOpen = false">
+                <svg
+                  class="w-6 h-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div>
+              <ul>
+                <li class="mb-1">
+                  <a
+                    class="block p-4 text-sm font-semibold text-[#F8BE1A] rounded hover:bg-blue-50 hover:text-blue-600"
+                    href="#"
+                    >BERANDA</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    class="block p-4 text-sm font-semibold text-[#F8BE1A] rounded hover:bg-blue-50 hover:text-blue-600"
+                    href="#"
+                    >TENTANG KAMI</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
       </header>
 
@@ -50,6 +99,7 @@ const activityImageClasses = computed(() => ({
         <img
           alt="kaleka-activities"
           style="width: 100%; height: 200px"
+          :class="activityImageClasses"
           src="../assets/images/img-activities.png"
         />
       </div>
