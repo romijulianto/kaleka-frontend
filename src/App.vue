@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import DefaultLayout from "./layouts/DefaultLayout.vue";
 </script>
 
 <template>
-  <router-view />
+  <DefaultLayout>
+    <router-view />
+  </DefaultLayout>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

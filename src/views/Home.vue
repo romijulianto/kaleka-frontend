@@ -72,15 +72,18 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div id="map" class="map"></div>
+  <div class="justify-items-center">
+    <div id="map" class="p-[80px]"></div>
+  </div>
 </template>
 
 <style scoped>
 #map {
   position: absolute;
-  top: 0;
+  top: 10;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
+  height: 65vh;
 }
 .ol-attribution {
   display: none !important;
