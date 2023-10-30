@@ -110,7 +110,7 @@ onMounted(async () => {
 
 <template>
   <div class="justify-items-center">
-    <div id="map" class="p-[80px]">
+    <div id="map" class="lg:p-[60px] sm:p-[30px] md:p-[40px] p-[20px]">
       <div
         ref="popup"
         class="ol-popup absolute bg-white shadow-md p-4 rounded-lg border border-gray-300 right-2 items-center min-w-[150px]"
