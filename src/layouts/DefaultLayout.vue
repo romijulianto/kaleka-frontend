@@ -16,7 +16,7 @@ const activityImageClasses = computed(() => ({
 
 <template>
   <div id="layout">
-    <div id="nav">
+    <div id="nav overflow-x: hidden overflow-y: hidden">
       <header class="flex items-center justify-center p-4 bg-black md:p-7">
         <div
           class="justify-center md:absolute md:justify-start md:logo md:left-4 md:flex"
@@ -105,7 +105,7 @@ const activityImageClasses = computed(() => ({
       </div>
     </div>
 
-    <slot />
+    <slot class="mt-[35vh]" />
   </div>
 </template>
 

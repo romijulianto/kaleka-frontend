@@ -126,9 +126,7 @@ onMounted(async () => {
 
 <style scoped>
 #map {
-  position: absolute;
-  top: 10;
-  bottom: 0;
+  position: relative;
   width: 100vw;
   height: 65vh;
 }
